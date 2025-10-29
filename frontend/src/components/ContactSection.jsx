@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { Send } from 'lucide-react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { useToast } from '../hooks/use-toast';
+import React, { useState } from "react";
+import { Send } from "lucide-react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { useToast } from "../hooks/use-toast";
 
 const ContactSection = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -31,34 +31,53 @@ const ContactSection = () => {
         title: "Message Sent!",
         description: "Thank you for reaching out. We'll get back to you soon.",
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: "", email: "", message: "" });
       setIsSubmitting(false);
     }, 1500);
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#0B1320] relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-24 relative overflow-hidden bg-gradient-to-b from-[#0b1320] via-[#0b1320] to-[#0a0f1d]"
+    >
+      {/* Background glow and vignette */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-60 left-1/2 -translate-x-1/2 w-[95vmin] h-[95vmin] rounded-full bg-cyan-500/10 blur-3xl"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(1100px_420px_at_50%_110%,rgba(0,0,0,0.55),transparent_60%)]"></div>
+        <div className="absolute -bottom-40 -right-32 w-[55vmin] h-[55vmin] rounded-full bg-cyan-400/10 blur-3xl opacity-70"></div>
+      </div>
+
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F1827] border border-cyan-500/20 mb-4">
-            <span className="text-cyan-400 text-sm font-medium">Get in Touch</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#0F1827]/70 border border-cyan-500/30 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] backdrop-saturate-125 mb-4 chip-glow">
+            <span className="text-cyan-300 text-sm font-medium">
+              Get in Touch
+            </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-white">Let's Build </span>
-            <span className="text-cyan-400">Together</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+            <span className="text-white title-glow-white">Let’s Build </span>
+            <span className="bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent title-glow-cyan">
+              Together
+            </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-            Have a project in mind? We'd love to hear about it. Drop us a message and let's start the conversation.
+          <p className="text-lg md:text-xl text-slate-300/90 max-w-3xl mx-auto soft-shadow">
+            Have a project in mind? We’d love to hear about it. Drop us a
+            message and let’s start the conversation.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-[#0F1827] rounded-2xl p-8">
+          <div className="relative rounded-2xl p-8 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] overflow-hidden backdrop-saturate-125">
+            <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-60"></div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Your Name
                 </label>
                 <Input
@@ -68,13 +87,16 @@ const ContactSection = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="bg-[#1A2332] border-transparent text-white placeholder:text-gray-500 focus:border-cyan-500 focus:ring-cyan-500 transition-all"
+                  className="bg-[#0f1626]/70 border-white/10 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-cyan-400/40 transition-all rounded-xl h-12 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]"
                   placeholder=""
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Email Address
                 </label>
                 <Input
@@ -84,13 +106,16 @@ const ContactSection = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="bg-[#1A2332] border-transparent text-white placeholder:text-gray-500 focus:border-cyan-500 focus:ring-cyan-500 transition-all"
+                  className="bg-[#0f1626]/70 border-white/10 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-cyan-400/40 transition-all rounded-xl h-12 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]"
                   placeholder=""
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Your Message
                 </label>
                 <Textarea
@@ -100,7 +125,7 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className="bg-[#1A2332] border-transparent text-white placeholder:text-gray-500 focus:border-cyan-500 focus:ring-cyan-500 transition-all resize-none"
+                  className="bg-[#0f1626]/70 border-white/10 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-cyan-400/40 transition-all resize-none rounded-xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]"
                   placeholder=""
                 />
               </div>
@@ -108,7 +133,7 @@ const ContactSection = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-6 transition-all duration-300"
+                className="w-full bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-500 text-slate-900 font-semibold py-6 rounded-xl transition-all duration-300 shadow-[0_10px_30px_rgba(56,189,248,0.25)] hover:shadow-[0_15px_40px_rgba(56,189,248,0.35)] ring-1 ring-cyan-300/40"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2 justify-center">
@@ -126,24 +151,29 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="relative rounded-2xl p-8 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] overflow-hidden backdrop-saturate-125 space-y-8">
+            <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-60"></div>
             {/* Direct Contact */}
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F1827]/70 border border-cyan-500/30 chip-glow mb-4">
                 <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                <h3 className="text-xl font-bold text-white">Direct Contact</h3>
+                <span className="text-cyan-300 text-sm font-medium">
+                  Direct Contact
+                </span>
               </div>
               <a
                 href="mailto:hello@devteam.com"
-                className="text-cyan-400 text-lg hover:text-cyan-300 transition-colors"
+                className="text-cyan-300 text-lg hover:text-cyan-200 transition-colors soft-shadow"
               >
                 hello@devteam.com
               </a>
             </div>
 
             {/* Why Work With Us */}
-            <div className="bg-[#0F1827] rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-white mb-6">Why Work With Us?</h3>
+            <div className="rounded-xl p-6 bg-[#0f1626]/50 border border-white/10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
+              <h3 className="text-xl font-bold text-white mb-6 soft-shadow">
+                Why Work With Us?
+              </h3>
               <ul className="space-y-4 text-gray-300">
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 mt-1 text-lg">•</span>
@@ -166,6 +196,24 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .title-glow-white {
+          text-shadow: 0 2px 10px rgba(255, 255, 255, 0.18),
+            0 0 30px rgba(0, 0, 0, 0.35);
+        }
+        .title-glow-cyan {
+          text-shadow: 0 3px 14px rgba(34, 211, 238, 0.45),
+            0 0 30px rgba(34, 211, 238, 0.25);
+        }
+        .soft-shadow {
+          text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+        }
+        .chip-glow {
+          box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.18),
+            0 10px 30px rgba(34, 211, 238, 0.1);
+        }
+      `}</style>
     </section>
   );
 };
