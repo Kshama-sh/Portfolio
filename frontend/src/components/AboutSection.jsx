@@ -8,8 +8,8 @@ const AboutSection = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-white">Meet The </span>
-            <span className="text-cyan-400">Team</span>
+            <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Meet The </span>
+            <span className="text-cyan-400 drop-shadow-[0_4px_12px_rgba(6,182,212,0.4)]">Team</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
             Two passionate developers united by a mission to build exceptional software solutions that make a difference.
@@ -17,14 +17,14 @@ const AboutSection = () => {
         </div>
 
         {/* Team members */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
           {teamMembers.map((member) => (
             <div 
               key={member.id} 
-              className="bg-[#0F1827] rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 group"
+              className="bg-[#0F1827] rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 group"
             >
               {/* Image container */}
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={member.image} 
                   alt={member.name}
@@ -33,11 +33,11 @@ const AboutSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-cyan-400 font-semibold mb-6">{member.role}</p>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">{member.name}</h3>
+                <p className="text-cyan-400 font-semibold mb-4 text-sm drop-shadow-[0_2px_4px_rgba(6,182,212,0.3)]">{member.role}</p>
                 
-                <div className="space-y-2 mb-6">
+                <div className="space-y-1 mb-4 text-sm">
                   <p className="text-gray-300">5+ Years Experience</p>
                   <p className="text-gray-300">AI-Powered Web Products</p>
                 </div>
@@ -47,7 +47,7 @@ const AboutSection = () => {
                   {member.expertise.slice(0, 2).map((skill, idx) => (
                     <span 
                       key={idx} 
-                      className="px-4 py-2 bg-[#1A2332] text-gray-300 rounded-full text-sm"
+                      className="px-3 py-1.5 bg-[#1A2332] text-gray-300 rounded-full text-xs"
                     >
                       {skill}
                     </span>
