@@ -1,7 +1,5 @@
 import React from 'react';
 import { Code, Database, Layers, Brain } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
 import { services } from '../data/mock';
 
 const iconMap = {
@@ -13,71 +11,55 @@ const iconMap = {
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-slate-950 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl top-1/4 left-1/4"></div>
-        <div className="absolute w-96 h-96 bg-blue-500/5 rounded-full blur-3xl bottom-1/4 right-1/4"></div>
-      </div>
-
+    <section id="services" className="py-24 bg-[#0B1320] relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-sm mb-4">
-            <Layers className="w-4 h-4 text-cyan-400" />
-            <span className="text-cyan-300 text-sm font-medium">Our Services</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            What We <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Build</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <span className="text-white">What We </span>
+            <span className="text-cyan-400">Build</span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
             From concept to deployment, we deliver comprehensive solutions tailored to your needs.
           </p>
         </div>
 
         {/* Services grid */}
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const IconComponent = iconMap[service.icon];
             return (
-              <Card
+              <div
                 key={service.id}
-                className="bg-slate-800/30 backdrop-blur-sm border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 group overflow-hidden relative"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="bg-[#0F1827] rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 group"
               >
-                {/* Hover gradient effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/5 group-hover:via-blue-500/5 group-hover:to-transparent transition-all duration-500"></div>
-                
-                <CardContent className="p-8 relative z-10">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                    <IconComponent className="w-8 h-8 text-cyan-400" />
-                  </div>
+                {/* Icon */}
+                <div className="w-16 h-16 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
+                  <IconComponent className="w-8 h-8 text-cyan-400" />
+                </div>
 
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
-                    {service.title}
-                  </h3>
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {service.title}
+                </h3>
 
-                  {/* Description */}
-                  <p className="text-slate-400 leading-relaxed mb-6">
-                    {service.description}
-                  </p>
+                {/* Description */}
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  {service.description}
+                </p>
 
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {service.technologies.map((tech, idx) => (
-                      <Badge
-                        key={idx}
-                        variant="secondary"
-                        className="bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:border-cyan-500/50 hover:text-cyan-300 transition-colors"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {service.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-4 py-2 bg-[#1A2332] text-gray-300 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             );
           })}
         </div>
