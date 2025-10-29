@@ -21,12 +21,12 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto text-center">
           {/* Main heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            <span className="block text-white">We Build Modern</span>
+            <span className="block text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">We Build Modern</span>
             <span className="block relative mt-2">
               {/* Soft glow behind text */}
               <span className="absolute inset-0 blur-[60px] opacity-50 bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400"></span>
               {/* Main text */}
-              <span className="relative text-cyan-400">Web Apps</span>
+              <span className="relative text-cyan-400 drop-shadow-[0_4px_12px_rgba(6,182,212,0.6)]">Web Apps</span>
             </span>
           </h1>
 
