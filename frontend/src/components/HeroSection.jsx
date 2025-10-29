@@ -66,8 +66,17 @@ const HeroSection = () => {
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight">
             Crafting Digital
-            <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-300% mt-2">
-              Excellence
+            <span className="block relative mt-2">
+              {/* Glow layer - soft diffused radial light behind text */}
+              <span className="absolute inset-0 blur-3xl opacity-60 bg-gradient-to-r from-blue-400/40 via-cyan-400/60 to-blue-400/40 animate-gradient bg-300%"></span>
+              
+              {/* Secondary glow for depth */}
+              <span className="absolute inset-0 blur-2xl opacity-40 bg-gradient-to-r from-cyan-300/30 via-blue-300/50 to-cyan-300/30 animate-gradient bg-300%" style={{ animationDelay: '0.5s' }}></span>
+              
+              {/* Main text with premium gradient */}
+              <span className="relative bg-gradient-to-r from-blue-200 via-cyan-300 to-blue-200 bg-clip-text text-transparent animate-gradient bg-300% drop-shadow-[0_0_30px_rgba(34,211,238,0.3)]">
+                Excellence
+              </span>
             </span>
           </h1>
 
