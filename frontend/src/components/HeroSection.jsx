@@ -143,11 +143,17 @@ const HeroSection = () => {
 
       <style jsx>{`
         @keyframes gradient {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
+          0%, 100% { 
+            background-position: 0% 50%;
+            filter: brightness(1);
+          }
+          50% { 
+            background-position: 100% 50%;
+            filter: brightness(1.1);
+          }
         }
         .animate-gradient {
-          animation: gradient 3s ease infinite;
+          animation: gradient 6s ease infinite;
         }
         .bg-300% {
           background-size: 300%;
