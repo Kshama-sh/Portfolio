@@ -1,4 +1,5 @@
 import React from "react";
+import { Github, Linkedin } from "lucide-react";
 import { teamMembers } from "../data/mock";
 
 const AboutSection = () => {
@@ -61,6 +62,24 @@ const AboutSection = () => {
                       {skill}
                     </span>
                   ))}
+                </div>
+
+                {/* Social links */}
+                <div className="flex gap-3">
+                  <a
+                    href={member.github || "#"}
+                    className="w-10 h-10 rounded-full bg-[#1A2332] flex items-center justify-center hover:bg-[#1e2838] transition-colors group"
+                    aria-label="GitHub"
+                  >
+                    <Github className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
+                  </a>
+                  <a
+                    href={member.linkedin || "#"}
+                    className="w-10 h-10 rounded-full bg-[#1A2332] flex items-center justify-center hover:bg-[#1e2838] transition-colors group"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
+                  </a>
                 </div>
               </div>
             </div>
