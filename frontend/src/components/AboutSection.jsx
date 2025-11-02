@@ -46,12 +46,10 @@ const AboutSection = () => {
                 <p className="text-cyan-400 font-semibold mb-4 text-sm drop-shadow-[0_2px_4px_rgba(6,182,212,0.3)]">
                   {member.role}
                 </p>
-
                 {/* <div className="space-y-1 mb-4 text-sm">
                   <p className="text-gray-300">5+ Years Experience</p>
                   <p className="text-gray-300">AI-Powered Web Products</p>
                 </div> */}
-
                 {/* Expertise badges */}
                 <div className="flex flex-wrap gap-2">
                   {member.expertise.map((skill, index) => (
@@ -63,9 +61,9 @@ const AboutSection = () => {
                     </span>
                   ))}
                 </div>
-
                 {/* Social links */}
-                <div className="flex gap-3">
+
+                <div className="flex gap-3 mt-2">
                   <a
                     href={member.github || "#"}
                     className="w-10 h-10 rounded-full bg-[#1A2332] flex items-center justify-center hover:bg-[#1e2838] transition-colors group"
