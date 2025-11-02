@@ -51,40 +51,40 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl top-20 -left-20 animate-pulse hue-shift"></div>
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl top-20 -left-20 animate-pulse hue-shift z-0"></div>
         <div
-          className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl bottom-20 -right-20 animate-pulse hue-shift"
+          className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl bottom-20 -right-20 animate-pulse hue-shift z-0"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute w-64 h-64 bg-cyan-400/5 rounded-full blur-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse hue-shift"
+          className="absolute w-64 h-64 bg-cyan-400/5 rounded-full blur-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse hue-shift z-0"
           style={{ animationDelay: "2s" }}
         ></div>
         {/* Psychedelic conic gradient ring */}
-        <div className="psy-ring"></div>
+        <div className="psy-ring z-0"></div>
         {/* Grain overlay */}
-        <div className="grain-overlay pointer-events-none"></div>
+        <div className="grain-overlay pointer-events-none z-0"></div>
       </div>
 
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20 z-0"></div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+      <div className="container mx-auto px-6 lg:px-8 relative z-20">
+        <div className="max-w-5xl mx-auto text-center relative z-20">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-sm mb-8 animate-fade-in">
+          {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-sm mb-8 animate-fade-in">
             <Zap className="w-4 h-4 text-cyan-400" />
             <span className="text-cyan-300 text-sm font-medium">
               Available for Projects
             </span>
-          </div>
+          </div> */}
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight text-glow-strong">
-            Crafting Digital
+            We Build Modern
             <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-300% mt-2 text-glow-strong">
-              Excellence
+              Web Apps
             </span>
           </h1>
 
@@ -101,16 +101,15 @@ const HeroSection = () => {
 
           {/* Description */}
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed text-glow-faint">
-            A two-person powerhouse delivering cutting-edge web applications,
-            AI-powered solutions, and scalable cloud infrastructure.
+            Your Tech Vision, Engineered With Precision
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-20">
             <Button
               size="lg"
               onClick={() => scrollToSection("portfolio")}
-              className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-semibold px-8 py-6 text-lg rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50 group btn-glow"
+              className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-semibold px-8 py-6 text-lg rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50 group btn-glow relative z-20"
             >
               View Our Work
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -119,31 +118,29 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection("contact")}
-              className="border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 px-8 py-6 text-lg rounded-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 btn-outline-glow"
+              className="border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 px-8 py-6 text-lg rounded-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 btn-outline-glow relative z-20"
             >
               Get In Touch
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto">
-            <div className="text-center">
+          <div className="grid grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto relative z-20">
+            <div className="text-center relative z-20">
               <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2 text-glow-stat">
-                11+
+                2+
               </div>
-              <div className="text-slate-400 text-sm md:text-base">
-                Years Combined
-              </div>
+              <div className="text-slate-400 text-sm md:text-base">Years</div>
             </div>
-            <div className="text-center">
+            <div className="text-center relative z-20">
               <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2 text-glow-stat">
-                50+
+                5+
               </div>
               <div className="text-slate-400 text-sm md:text-base">
                 Projects Delivered
               </div>
             </div>
-            <div className="text-center">
+            <div className="text-center relative z-20">
               <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2 text-glow-stat">
                 100%
               </div>
@@ -156,7 +153,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
         <div className="w-6 h-10 border-2 border-cyan-500/50 rounded-full p-1">
           <div className="w-1.5 h-3 bg-cyan-400 rounded-full mx-auto animate-scroll"></div>
         </div>
