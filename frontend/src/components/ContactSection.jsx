@@ -154,19 +154,27 @@ const ContactSection = () => {
           <div className="relative rounded-2xl p-8 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] overflow-hidden backdrop-saturate-125 space-y-8">
             <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-60"></div>
             {/* Direct Contact */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F1827]/70 border border-cyan-500/30 chip-glow mb-4">
-                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                <span className="text-cyan-300 text-sm font-medium">
+            <div className="relative flex flex-col items-start md:items-center text-center space-y-3 p-6 bg-[rgba(15,24,39,0.6)] rounded-2xl border border-cyan-500/20 shadow-[0_0_20px_rgba(6,182,212,0.08)] backdrop-blur-md transition-all duration-500 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)]">
+              {/* Tag chip */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F1827]/80 border border-cyan-400/30 shadow-[0_0_8px_rgba(6,182,212,0.2)]">
+                <div className="w-2.5 h-2.5 bg-cyan-400 rounded-full animate-pulse"></div>
+                <span className="text-cyan-300 text-sm font-semibold tracking-wide">
                   Direct Contact
                 </span>
               </div>
+
+              {/* Email link */}
               <a
-                href="mailto:hello@devteam.com"
-                className="text-cyan-300 text-lg hover:text-cyan-200 transition-colors soft-shadow"
+                href="mailto:kshama.sh0903@gmail.com"
+                className="group text-lg md:text-xl font-medium text-cyan-300 hover:text-cyan-100 transition-all duration-300 flex items-center gap-2"
               >
-                hello@devteam.com
+                <span className="relative inline-block after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-cyan-400 after:transition-all after:duration-300 group-hover:after:w-full">
+                  kshama.sh0903@gmail.com
+                </span>
               </a>
+
+              {/* Subtle glow accent */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent blur-sm opacity-70"></div>
             </div>
 
             {/* Why Work With Us */}
@@ -177,7 +185,7 @@ const ContactSection = () => {
               <ul className="space-y-4 text-gray-300">
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 mt-1 text-lg">•</span>
-                  <span>11+ years of combined experience</span>
+                  <span>2+ years of combined experience</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 mt-1 text-lg">•</span>

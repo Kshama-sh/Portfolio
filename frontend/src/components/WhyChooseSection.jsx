@@ -4,22 +4,22 @@ import { Target, Sparkles, Award } from "lucide-react";
 const WhyChooseSection = () => {
   const reasons = [
     {
+      icon: Award,
+      title: "End-to-End Development",
+      description:
+        "We handle everything - from concept and design to deployment and maintenance. You get a complete solution without juggling multiple teams",
+    },
+    {
       icon: Target,
       title: "Focused Excellence",
       description:
-        "As a two-person team, every project receives our undivided attention and expertise. No middlemen, just direct collaboration.",
+        "Every project we take on gets our full attention — from understanding your goals to refining the smallest detail.",
     },
     {
       icon: Sparkles,
       title: "Cutting-Edge Tech",
       description:
-        "We stay at the forefront of technology, leveraging the last frameworks, tools, and AI innovations to build future-proof solutions.",
-    },
-    {
-      icon: Award,
-      title: "Proven Track Record",
-      description:
-        "11+ combined years of experience and 50+ successful projects across diverse industries speak to our commitment to quality.",
+        "Whether it's a full-stack web app, intelligent automation, or cloud integration, we bring modern tech to the table.",
     },
   ];
 
