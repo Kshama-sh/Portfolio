@@ -1,9 +1,9 @@
-import React from 'react';
-import { ArrowUp, Code2, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import React from "react";
+import { ArrowUp, Code2, Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const currentYear = new Date().getFullYear();
@@ -21,7 +21,8 @@ const Footer = () => {
               <span className="text-2xl font-bold text-white">DevTeam</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Building exceptional software solutions with cutting-edge technology and creative innovation.
+              Building exceptional software solutions with cutting-edge
+              technology and creative innovation.
             </p>
           </div>
 
@@ -29,19 +30,24 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              {['About', 'Services', 'Portfolio', 'Tech Stack', 'Contact'].map((item) => (
-                <li key={item}>
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById(item.toLowerCase().replace(' ', ''));
-                      if (element) element.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="text-gray-400 hover:text-cyan-400 transition-colors"
-                  >
-                    {item}
-                  </button>
-                </li>
-              ))}
+              {["About", "Services", "Portfolio", "Tech Stack", "Contact"].map(
+                (item) => (
+                  <li key={item}>
+                    <button
+                      onClick={() => {
+                        const element = document.getElementById(
+                          item.toLowerCase().replace(" ", "")
+                        );
+                        if (element)
+                          element.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className="text-gray-400 hover:text-cyan-400 transition-colors"
+                    >
+                      {item}
+                    </button>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -50,14 +56,14 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Connect</h3>
             <div className="space-y-3 mb-6">
               <a
-                href="mailto:hello@devteam.com"
+                href="mailto:kshama.sh0903@gmail.com"
                 className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span>hello@devteam.com</span>
+                <span>kshama.sh0903@gmail.com</span>
               </a>
             </div>
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3">
               <a
                 href="https://github.com"
                 target="_blank"
@@ -82,7 +88,7 @@ const Footer = () => {
               >
                 <Twitter className="w-5 h-5 text-gray-400 hover:text-cyan-400" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 

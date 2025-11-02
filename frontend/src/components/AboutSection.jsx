@@ -10,15 +10,15 @@ const AboutSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-              Meet The{" "}
+              Brains and Builders{" "}
             </span>
             <span className="text-cyan-400 drop-shadow-[0_4px_12px_rgba(6,182,212,0.4)]">
-              Team
+              Behind Innovation
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-            Two passionate developers united by a mission to build exceptional
-            software solutions that make a difference.
+            We're curious minds crafting intelligent, scalable, and beautifully
+            engineered digital experiences.
           </p>
         </div>
 
@@ -46,26 +46,24 @@ const AboutSection = () => {
                 <p className="text-cyan-400 font-semibold mb-4 text-sm drop-shadow-[0_2px_4px_rgba(6,182,212,0.3)]">
                   {member.role}
                 </p>
-
-                <div className="space-y-1 mb-4 text-sm">
+                {/* <div className="space-y-1 mb-4 text-sm">
                   <p className="text-gray-300">5+ Years Experience</p>
                   <p className="text-gray-300">AI-Powered Web Products</p>
-                </div>
-
+                </div> */}
                 {/* Expertise badges */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {member.expertise.slice(0, 2).map((skill, idx) => (
+                <div className="flex flex-wrap gap-2">
+                  {member.expertise.map((skill, index) => (
                     <span
-                      key={idx}
-                      className="px-3 py-1.5 bg-[#1A2332] text-gray-300 rounded-full text-xs"
+                      key={index}
+                      className="px-3 py-1.5 bg-[#1A2332] text-gray-300 rounded-full text-xs border border-gray-700/40 hover:border-cyan-400/40 transition-colors duration-300"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
-
                 {/* Social links */}
-                <div className="flex gap-3">
+
+                <div className="flex gap-3 mt-2">
                   <a
                     href={member.github || "#"}
                     className="w-10 h-10 rounded-full bg-[#1A2332] flex items-center justify-center hover:bg-[#1e2838] transition-colors group"
